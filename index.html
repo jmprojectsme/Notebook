@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f87171">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Notebook">
+  <title>Notebook App</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="profile" id="profileBtn">
+      <img id="profilePic" src="https://placehold.co/50x50/f87171/white?text=ME" alt="Profile">
+      <div class="profile-name" id="profileName">Your Name</div>
+    </div>
+    <div class="header-title">📓 Notebook</div>
+  </div>
+
+  <!-- Sidebar Drawer -->
+  <div id="overlay"></div>
+  <div id="drawer">
+    <h3>⚙️ Settings</h3>
+
+    <label class="drawer-label">Profile Picture</label>
+    <input type="file" id="uploadPic" accept="image/*">
+
+    <label class="drawer-label">Your Name</label>
+    <input type="text" id="userNameInput" placeholder="Enter your name">
+
+    <label class="drawer-label">Paper Color</label>
+    <div class="color-options">
+      <button class="color-swatch" style="background:#fff8dc" data-bg="#fff8dc" data-color="#000" title="Warm White"></button>
+      <button class="color-swatch" style="background:#fefbd8" data-bg="#fefbd8" data-color="#000" title="Soft Yellow"></button>
+      <button class="color-swatch" style="background:#f0fff0" data-bg="#f0fff0" data-color="#000" title="Mint"></button>
+      <button class="color-swatch" style="background:#e0f7fa" data-bg="#e0f7fa" data-color="#000" title="Sky Blue"></button>
+      <button class="color-swatch" style="background:#fff0f3" data-bg="#fff0f3" data-color="#000" title="Rose"></button>
+      <button class="color-swatch" style="background:#f3f0ff" data-bg="#f3f0ff" data-color="#000" title="Lavender"></button>
+      <button class="color-swatch" style="background:#1e1e2e" data-bg="#1e1e2e" data-color="#eee" title="Dark"></button>
+      <button class="color-swatch" style="background:#fff" data-bg="#fff" data-color="#000" title="White"></button>
+    </div>
+
+    <label class="drawer-label">Theme Color</label>
+    <div class="color-options">
+      <button class="color-swatch" style="background:#f87171" data-theme="#f87171" title="Red"></button>
+      <button class="color-swatch" style="background:#fb923c" data-theme="#fb923c" title="Orange"></button>
+      <button class="color-swatch" style="background:#34d399" data-theme="#34d399" title="Green"></button>
+      <button class="color-swatch" style="background:#60a5fa" data-theme="#60a5fa" title="Blue"></button>
+      <button class="color-swatch" style="background:#a78bfa" data-theme="#a78bfa" title="Purple"></button>
+      <button class="color-swatch" style="background:#f472b6" data-theme="#f472b6" title="Pink"></button>
+    </div>
+
+    <button id="closeDrawerBtn">✕ Close</button>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="reminders">📌 Reminders</button>
+    <button class="tab-btn" data-tab="poems">✍️ Poems</button>
+    <button class="tab-btn" data-tab="stickies">🗒 Stickies</button>
+  </div>
+
+  <!-- Reminders Tab -->
+  <div class="tab-content active" id="remindersTab">
+    <div class="input-row">
+      <textarea id="reminderInput" placeholder="Write a reminder..."></textarea>
+      <button class="add-btn" id="addReminderBtn">＋ Add</button>
+    </div>
+    <div id="remindersList"></div>
+  </div>
+
+  <!-- Poems Tab -->
+  <div class="tab-content" id="poemsTab">
+    <div class="input-row">
+      <textarea id="poemInput" placeholder="Write your poem..."></textarea>
+    </div>
+    <div class="poem-meta">
+      <input type="date" id="poemDateInput">
+      <button class="add-btn" id="addPoemBtn">＋ Add</button>
+    </div>
+    <div id="poemsList"></div>
+  </div>
+
+  <!-- Stickies Tab -->
+  <div class="tab-content" id="stickiesTab">
+    <button class="add-btn wide" id="addStickyBtn">＋ Add Sticky Note</button>
+    <div class="sticky-board" id="stickyBoard"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
