@@ -1,4 +1,4 @@
-const CACHE_NAME = 'notebook-v1';
+const CACHE_NAME = 'notebook-v2';
 const ASSETS = [
   '/',
   '/index.html',
